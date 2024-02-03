@@ -1,25 +1,18 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react'
 import HelmetTitle from './isHelmetTitle';
+import { useGlobalContext } from './context/globalContext';
 
-interface Product {
-    id: number;
-    title: string;
-    description: string;
-    image: string;
-    price: number;
-    category: string;
-}
+
 
 
 const Home = () => {
 
-    const [products, setProducts] = useState<Product[]>([]);
-    const [loading, setLoading] = useState(false);
+    const { products, loading } = useGlobalContext()
 
     const addToCart = (productId: number) => {
         // Find the product with the matching ID
-        const selectedProduct = products.find((product) => product.id === productId);
+        const selectedProduct = products.find((product: any) => product.id === productId);
 
         if (selectedProduct) {
             // Access the entire data of the selected product
@@ -30,13 +23,6 @@ const Home = () => {
         };
     }
 
-    useEffect(() => {
-        setLoading(true);
-        axios.get("https://fakestoreapi.com/products/").then((resp) => {
-            setProducts(resp.data as Product[]);
-        });
-        setLoading(false);
-    }, [])
 
     return (
         <>
@@ -47,7 +33,7 @@ const Home = () => {
                 <div>
                     <h2 className="font-medium text-lg mb-2 mt-4">Mens</h2>
                     <div className="main-home masonry-layout">
-                        {products.map((product) => (
+                    {products.map((product) => (
                             product.category === `men's clothing` && (
                                 <div key={product.id} className='card'>
                                     <div>

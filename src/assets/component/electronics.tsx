@@ -1,12 +1,12 @@
 import React from 'react';
 import { useGlobalContext } from './context/globalContext';
 
-const Jewellery = () => {
+const Electronics = () => {
   const { products } = useGlobalContext();
 
   // Filter products based on some condition specific to Mens category
   const mensProducts = products.filter(product => (
-    product.category === `jewelery`));
+    product.category === `electronics`));
 
   function addToCart(id: number): void {
     throw new Error('Function not implemented.');
@@ -14,7 +14,7 @@ const Jewellery = () => {
 
   return (
     <div>
-      <h2 className="font-medium text-lg mb-2 mt-4">Jewelery</h2>
+      <h2 className="font-medium text-lg mb-2 mt-4">Electronics</h2>
       <div className="card-container">
         <div className="main-home masonry-layout">
           {mensProducts.map((product) => (
@@ -37,5 +37,5 @@ const Jewellery = () => {
   );
 };
 
-export default Jewellery;
+export default Electronics;
 

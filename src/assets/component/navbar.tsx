@@ -14,6 +14,7 @@ const Navbar = () => {
                     <Link className='nav-item' to="/mens">men</Link>
                     <Link className='nav-item' to="/womens">women</Link>
                     <Link className='nav-item' to="/jewellery">Jewellery</Link>
+                    <Link className='nav-item' to="/electronics">Electronics</Link>
                 </div>
                 <Link  className='nav-item' to="/cart" style={{float: 'right'}}>
                 <i className="fa-solid fa-cart-shopping"></i>
