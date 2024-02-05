@@ -1,4 +1,3 @@
-import React from 'react';
 import { useGlobalContext } from './context/globalContext';
 
 const Womens = () => {
@@ -8,7 +7,7 @@ const Womens = () => {
   const mensProducts = products.filter(product => (
     product.category === `women's clothing`));
 
-  function addToCart(id: number): void {
+  function addToCart(_id: number): void {
     throw new Error('Function not implemented.');
   }
 

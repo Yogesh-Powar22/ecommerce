@@ -39,7 +39,7 @@ export const GlobalContextProvider: React.FC<GlobalContextProviderProps> = ({ ch
       .then((resp) => {
         setProducts(resp.data as Product[]);
         setLoading(false);
-        console.log(resp.data);
+        // console.log(resp.data);
         
       })
       .catch((error) => {

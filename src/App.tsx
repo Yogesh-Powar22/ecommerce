@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {GlobalContextProvider} from "./assets/component/context/globalContext";
 import Navbar from "./assets/component/navbar";
 import Cart from "./assets/component/cart";
