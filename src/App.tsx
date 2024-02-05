@@ -14,10 +14,11 @@ function App() {
 
   return (
     <>
-      <div style={{width: '95%', margin: '0 auto'}}>
+      <div>
         <GlobalContextProvider>
           <BrowserRouter>
             <Navbar />
+            <div className="mx-4">
             <Routes>
               <Route path="/" element={<Home/>} />
               <Route path="/mens" element={<Mens/>} />
@@ -26,6 +27,7 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/electronics" element={<Electronics />} />
             </Routes>
+            </div>
           </BrowserRouter>
         </GlobalContextProvider>
       </div>
